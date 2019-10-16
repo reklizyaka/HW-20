@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Document</title>
+</head>
+<body>
+	<canvas id='canvas' width="600" height="600">
+	<script>
+		var points = [
+  				[50, 50],
+  				[50, 100],
+  				[100, 100],
+  				[100, 50],
+  				[50, 50]
+		];
+		function drawFigure(points){
+			let canvas = document.getElementById('canvas');
+			let ctx = canvas.getContext('2d');
+			ctx.beginPath();
+			points.forEach(function(item, index){
+				if (index === 0){
+					ctx.moveTo(item[0],item[1]);
+				} else {
+					ctx.lineTo(item[0],item[1]);
+				}
+			})
+			ctx.stroke();
+		}
+
+	drawFigure(points);
+
+
+
+// let canvas = document.getElementById('canvas');
+// let ctx = canvas.getContext('2d');
+// ctx.lineWidth = 3; 
+
+
+// let drawCircle = function (x, y, radius, isFill) {
+// 	ctx.beginPath();
+// 	ctx.arc(x, y, radius, 0, Math.PI*2, false);
+// 	isFill ? ctx.fill() : ctx.stroke();
+// };
+
+
+// let drawSnowman = function (x, y) {
+// 	ctx.fillStyle = "black";
+// 	ctx.lineWidth = 3;
+
+// 			ctx.arc(x + 50,y + 50, 10, 0, Math.PI, false); //smile
+// 			ctx.stroke();
+
+
+//               //head
+//               drawCircle(x + 50, y + 40, 40, false); 
+//               // body
+//               drawCircle(x + 50, y + 140, 60, false);
+//               drawCircle(x + 50, y + 280, 80, false); 
+//               // eyes
+//               drawCircle(x + 40, y + 35, 5, true);
+//               drawCircle(x + 60, y + 35, 5, true);
+//               // пуговки
+//               drawCircle(x + 50, y + 105, 5, true);
+//               drawCircle(x + 50, y + 135, 5, true);
+//               drawCircle(x + 50, y + 165, 5, true);
+
+//               drawCircle(x + 50, y + 235, 5, true);
+//               drawCircle(x + 50, y + 275, 5, true);
+//               drawCircle(x + 50, y + 315, 5, true);
+
+//          	// носяра
+//          	ctx.fillStyle = "orange";
+//          	drawCircle(x + 50, y + 45, 5, true);
+//          };
+
+//          drawSnowman(200, 50);
+     </script>
+</body>
+</html>
